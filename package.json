@@ -1,0 +1,40 @@
+{
+  "name": "nuget-package-upgrade",
+  "displayName": "NuGet Package Upgrade",
+  "description": "Select outdated NuGet packages and upgrade them with dotnet CLI.",
+  "version": "0.0.1",
+  "publisher": "NuGet-Package-Upgrade",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrikroschmann/NuGet-Package-Upgrade"
+  },
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:dotnetNugetUpdate.run"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dotnetNugetUpdate.run",
+        "title": "NuGet Package Upgrade: Select and Upgrade Packages"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
